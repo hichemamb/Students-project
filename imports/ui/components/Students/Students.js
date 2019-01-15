@@ -5,37 +5,31 @@ import { withTracker } from 'meteor/react-meteor-data';
 class Students extends Component {
 
     state = {
-        firstNameInput: '',
-        lastNameInput: '',
-        gitHubInput: '',
+        data: {
+            firstNameInput: '',
+            lastNameInput: '',
+            gitHubInput: ''
+        }
     };
 
-    handleChangeFirstname = (event) => {
-        event.preventDefault();
+    handleChange = (content) => event => {
+        const data = this.state.data;
         this.setState({
-            firstNameInput: event.target.value
-        });
-    };
-
-    handleChangeLastname = (event) => {
-        this.setState({
-            lastNameInput: event.target.value
-        });
-    };
-
-    handleChangeGithub = (event) => {
-        this.setState({
-            gitHubInput: event.target.value
+            data: {...data, [content]: event.target.value}
         });
     };
 
     handleSubmit = (event) => {
         event.preventDefault();
-        //console.log(listStudents.find({}).fetch());
+
+        const firstNameInput = this.state.data.firstNameInput;
+        const lastNameInput = this.state.data.firstNameInput;
+        const gitHubInput = this.state.data.firstNameInput;
+
         listStudents.insert({
-            firstName: this.state.firstNameInput,
-            lastName: this.state.lastNameInput,
-            gitHub: this.state.gitHubInput
+            firstName: firstNameInput,
+            lastName: lastNameInput,
+            gitHub: gitHubInput
         });
     };
 
@@ -45,11 +39,11 @@ class Students extends Component {
             <div className="Students">
                 <form>
                     <input type="text" value={this.state.firstNameInput}
-                           onChange={this.handleChangeFirstname}/>
+                           onChange={this.handleChange('firstNameInput')}/>
                     <input type="text" value={this.state.lastNameInput}
-                           onChange={this.handleChangeLastname}/>
+                           onChange={this.handleChange('lastNameInput')}/>
                     <input type="text" value={this.state.gitHubInput}
-                           onChange={this.handleChangeGithub}/>
+                           onChange={this.handleChange('gitHubInput')}/>
 
                     <button onClick={this.handleSubmit}>Valider</button>
                     <ul>
