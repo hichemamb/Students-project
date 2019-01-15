@@ -8,7 +8,7 @@ class Students extends Component {
         data: {
             firstNameInput: '',
             lastNameInput: '',
-            gitHubInput: ''
+            gitHubInput: '',
         }
     };
 
@@ -23,8 +23,8 @@ class Students extends Component {
         event.preventDefault();
 
         const firstNameInput = this.state.data.firstNameInput;
-        const lastNameInput = this.state.data.firstNameInput;
-        const gitHubInput = this.state.data.firstNameInput;
+        const lastNameInput = this.state.data.lastNameInput;
+        const gitHubInput = this.state.data.gitHubInput;
 
         listStudents.insert({
             firstName: firstNameInput,
@@ -49,7 +49,7 @@ class Students extends Component {
                     <ul>
                         {
                             this.props.list.map((element, index) =>
-                                <li key={index}>{element.firstName} {element.lastName} {element.gitHub}</li>
+                                <li key={index}>{element.firstName} {element.lastName} {element.gitHub} <button>Supprimer</button></li>
                             )
                         }
                     </ul>
