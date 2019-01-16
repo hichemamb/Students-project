@@ -33,6 +33,11 @@ class Students extends Component {
         });
     };
 
+    removeItemByID = (id) => (event) => {
+        event.preventDefault();
+        console.log(id);
+        listStudents.remove(id);
+    };
 
     render() {
         return (
@@ -49,7 +54,7 @@ class Students extends Component {
                     <ul>
                         {
                             this.props.list.map((element, index) =>
-                                <li key={index}>{element.firstName} {element.lastName} {element.gitHub} <button>Supprimer</button></li>
+                                <li key={index}>{element.firstName} {element.lastName} {element.gitHub} <button onClick={this.removeItemByID(element._id)}>Supprimer</button></li>
                             )
                         }
                     </ul>
