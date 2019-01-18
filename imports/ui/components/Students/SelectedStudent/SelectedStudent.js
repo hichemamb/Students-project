@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {listStudents} from '../../../../api/list-students';
+import Input from '../../Input/Input';
 
 class SelectedStudent extends Component {
 
@@ -39,16 +40,15 @@ class SelectedStudent extends Component {
         return (
             <div className="Students">
                 <form>
-                    <input type="text"
-                           value={firstNameInput}
-                           onChange={this.handleChangeUpdate('firstNameInput')}
-                    />
-                    <input type="text"
-                           value={lastNameInput}
-                           onChange={this.handleChangeUpdate('lastNameInput')}/>
-                    <input type="text"
-                           value={gitHubInput}
-                           onChange={this.handleChangeUpdate('gitHubInput')}/>
+                    <Input
+                        value={ firstNameInput }
+                        change={this.handleChangeUpdate('firstNameInput')}/>
+                    <Input
+                        value={ lastNameInput }
+                        change={this.handleChangeUpdate('lastNameInput')}/>
+                    <Input
+                        value={ gitHubInput }
+                        change={this.handleChangeUpdate('gitHubInput')}/>
 
                     <button onClick={this.handleUpdate}>Modifier</button>
 

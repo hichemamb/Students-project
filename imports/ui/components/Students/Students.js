@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {listStudents} from '../../../api/list-students';
 import {withTracker} from 'meteor/react-meteor-data';
-
+import Input from '../Input/Input';
 class Students extends Component {
 
     state = {
@@ -45,6 +45,8 @@ class Students extends Component {
         listStudents.remove(id);
     };
 
+
+
     render() {
         const firstNameInput = this.state.data.firstNameInput;
         const lastNameInput = this.state.data.lastNameInput;
@@ -54,12 +56,15 @@ class Students extends Component {
         return (
             <div className="Students">
                 <form>
-                    <input type="text" value={firstNameInput}
-                           onChange={this.handleChange('firstNameInput')}/>
-                    <input type="text" value={lastNameInput}
-                           onChange={this.handleChange('lastNameInput')}/>
-                    <input type="text" value={gitHubInput}
-                           onChange={this.handleChange('gitHubInput')}/>
+                    <Input
+                     value={ firstNameInput }
+                     change={this.handleChange('firstNameInput')}/>
+                    <Input
+                        value={ lastNameInput }
+                        change={this.handleChange('lastNameInput')}/>
+                    <Input
+                        value={ gitHubInput }
+                        change={this.handleChange('gitHubInput')}/>
 
                     <button onClick={this.handleSubmit}>Valider</button>
 
