@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {listStudents} from '../../../../api/list-students';
 import Input from '../../Input/Input';
+// import '../../Input/Input.css';
+import './SelectedStudent.css';
 
 class SelectedStudent extends Component {
 
@@ -38,8 +40,11 @@ class SelectedStudent extends Component {
         const gitHubInput = this.state.modifData.gitHubInput;
 
         return (
-            <div className="Students">
-                <form>
+            <div className="Select-students">
+                <div className="Container-title">
+                    <h1 className="title">Modifier vos informations ci-dessous</h1>
+                </div>
+                <form className="Form">
                     <Input
                         value={firstNameInput}
                         change={this.handleChangeUpdate('firstNameInput')}
@@ -52,8 +57,9 @@ class SelectedStudent extends Component {
                         value={gitHubInput}
                         change={this.handleChangeUpdate('gitHubInput')}
                         placeholder={'Github'}/>
-
-                    <button onClick={this.handleUpdate}>Modifier</button>
+                    <div>
+                        <button onClick={this.handleUpdate} className="Button">Modifier</button>
+                    </div>
                 </form>
             </div>
         );

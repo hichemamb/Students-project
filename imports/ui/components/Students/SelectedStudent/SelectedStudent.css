@@ -1,0 +1,49 @@
+.Select-students {
+    margin-top: 150px;
+}
+
+/*
+Container Title /////////////////////////////////////////////////////////
+*/
+.Container-title {
+    width: 80%;
+    margin: 0 auto;
+    font-style: italic;
+}
+.title{
+    font-size: 2.5rem;
+    color: #212121;
+    text-transform: uppercase;
+}
+
+/*
+Container Form
+*/
+.Form {
+    text-align: center;
+    display: block;
+}
+
+.Button {
+    width: 10vw;
+    height: 40px;
+    background: #0c8c33;
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+    text-align: center;
+    border: none;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    color:#FFF;
+    font-size: 1.2rem;
+    margin-top: 100px;
+    cursor: pointer;
+    opacity: .7;
+}
+
+.Button:hover {
+    background-color: transparent;
+    border: 1px solid #0c8c33;
+    color: #0c8c33;
+    transition: 350ms ease;
+}
