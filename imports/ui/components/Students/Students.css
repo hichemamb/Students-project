@@ -1,0 +1,120 @@
+/*
+Container Title /////////////////////////////////////////////////////////
+*/
+.Container-title {
+    width: 80%;
+    margin: 0 auto;
+    font-style: italic;
+}
+.title{
+    font-size: 2.5rem;
+    color: #212121;
+    text-transform: uppercase;
+}
+.sub-title{
+    color: #565656;
+    font-size: 1rem;
+}
+
+
+
+/*
+Container img /////////////////////////////////////////////////////////
+*/
+.Container-img {
+    background: url('../../assets/logo-hetic.png') no-repeat;
+    background-size: cover;
+}
+
+/*
+Container Form ///////////////////////////////////////////////////////////
+*/
+.Form {
+    text-align: center;
+    display: block;
+}
+
+.Button-submit {
+    width: 10vw;
+    height: 40px;
+    background: #0c8c33;
+    background: -webkit-linear-gradient(to right, #0c8c33, #FFFFFF);
+    opacity: .7;
+    text-align: center;
+    border: none;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    color:#FFF;
+    font-size: 1.2rem;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.Button-submit:hover {
+    background-color: transparent;
+    border: 1px solid #0c8c33;
+    color: #0c8c33;
+    transition: 350ms ease;
+}
+
+
+/*
+Container List ///////////////////////////////////////////////////////////
+*/
+.Container-list {
+/*text-align: center;*/
+    width: 90%;
+    margin: 0 auto;
+}
+
+.Container-infoName {
+    width: 50%;
+    margin: 0 auto;
+    color: #0c8c33;
+    opacity: .7;
+}
+
+.Container-button {
+    margin-top: 15px;
+}
+.Container-list button {
+    background: #0c8c33;
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);
+    text-align: center;
+    border: none;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    color:#FFF;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 7px 25px;
+    margin: 0 10px;
+    opacity: .7;
+}
+
+.Container-list button:hover {
+    background-color: transparent;
+    border: 1px solid #0c8c33;
+    color: #0c8c33;
+    transition: 350ms ease;
+    outline: none;
+}
+
+.Content-list {
+    padding: 0 !important;
+}
+.Content-list li {
+    list-style: none;
+    width: 33%;
+    border: 1px solid #0c8c33;
+    border-radius: 7px;
+    padding: 20px 20px;
+    text-align: center;
+    display: inline-block;
+    margin: 25px;
+    -webkit-box-shadow: 8px 5px 5px 0px rgba(242,242,242,1);
+    -moz-box-shadow: 8px 5px 5px 0px rgba(242,242,242,1);
+    box-shadow: 8px 5px 5px 0px rgba(242,242,242,1);
+}

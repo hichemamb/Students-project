@@ -1,0 +1,17 @@
+.Input {
+    margin-top: 30px;
+    width: 70%;
+    height: 50px;
+    background-color: transparent;
+    color: #0c8c33;
+    -webkit-box-shadow: 8px 5px 5px 0px rgba(242,242,242,1);
+    -moz-box-shadow: 8px 5px 5px 0px rgba(242,242,242,1);
+    box-shadow: 8px 5px 5px 0px rgba(242,242,242,1);
+    border: 1px solid #0c8c33;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    font-size: 1.5rem;
+    outline: none;
+    padding-left: 20px;
+}

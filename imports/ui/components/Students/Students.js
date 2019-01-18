@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {listStudents} from '../../../api/list-students';
 import {withTracker} from 'meteor/react-meteor-data';
 import Input from '../Input/Input';
+import './Students.css';
+import '../Input/Input
+
 class Students extends Component {
 
     state = {
@@ -55,29 +58,42 @@ class Students extends Component {
 
         return (
             <div className="Students">
-                <form>
+                <div className="Container-title">
+                    <h1 className="title">Liste</h1>
+                    <h4 className="sub-title">qui permet de lister les étudiants d'Hétic</h4>
+                </div>
+                <form className="Form">
                     <Input
                      value={ firstNameInput }
-                     change={this.handleChange('firstNameInput')}/>
+                     change={this.handleChange('firstNameInput')}
+                    />
                     <Input
                         value={ lastNameInput }
                         change={this.handleChange('lastNameInput')}/>
                     <Input
                         value={ gitHubInput }
                         change={this.handleChange('gitHubInput')}/>
+                    <div>
+                    <button onClick={this.handleSubmit} className="Button-submit">Valider</button>
+                    </div>
 
-                    <button onClick={this.handleSubmit}>Valider</button>
-
-                    <ul>
-                        {
-                            this.props.list.map((element, index) =>
-                                <li key={index}>{element.firstName} {element.lastName} {element.gitHub}
-                                    <button onClick={this.removeItemByID(element._id)}>Supprimer</button>
-                                    <button value={index} onClick={this.updateItem}>Modifier</button>
-                                </li>
-                            )
-                        }
-                    </ul>
+                    <div className="Container-list">
+                        <ul className="Content-list">
+                            {
+                                this.props.list.map((element, index) =>
+                                    <li key={index}>
+                                        <div className="Container-infoName">
+                                            {element.firstName} {element.lastName} {element.gitHub}
+                                        </div>
+                                        <div className="Container-button">
+                                            <button onClick={this.removeItemByID(element._id)}>Supprimer</button>
+                                            <button value={index} onClick={this.updateItem}>Modifier</button>
+                                        </div>
+                                    </li>
+                                )
+                            }
+                        </ul>
+                    </div>
                 </form>
             </div>
         );
