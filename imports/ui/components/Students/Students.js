@@ -9,11 +9,6 @@ class Students extends Component {
             firstNameInput: '',
             lastNameInput: '',
             gitHubInput: '',
-        },
-        modifData: {
-            firstNameInput: '',
-            lastNameInput: '',
-            gitHubInput: '',
         }
     };
 
@@ -21,13 +16,6 @@ class Students extends Component {
         const data = this.state.data;
         this.setState({
             data: {...data, [content]: event.target.value}
-        });
-    };
-
-    handleChangeUpdate = (content) => event => {
-        const modifData = this.state.modifData;
-        this.setState({
-            modifData: {...modifData, [content]: event.target.value}
         });
     };
 
@@ -45,15 +33,11 @@ class Students extends Component {
         });
     };
 
-    handleUpdate = (event) => {
+    updateItem = (event) => {
         event.preventDefault();
-        listStudents.update({_id: localStorage.getItem('id')}, {
-            $set: {
-                firstName: this.state.modifData.firstNameInput,
-                lastName: this.state.modifData.lastNameInput,
-                gitHub: this.state.modifData.gitHubInput
-            }
-        });
+        const list = this.props.list;
+        localStorage.setItem('id', list[event.target.value]._id);
+        this.props.history.push('/student');
     };
 
     removeItemByID = (id) => (event) => {
@@ -61,16 +45,11 @@ class Students extends Component {
         listStudents.remove(id);
     };
 
-    updateItem = (event) => {
-        event.preventDefault();
-        const list = this.props.list;
-        localStorage.setItem('id', list[event.target.value]._id);
-    };
-
     render() {
         const firstNameInput = this.state.data.firstNameInput;
         const lastNameInput = this.state.data.lastNameInput;
         const gitHubInput = this.state.data.gitHubInput;
+
 
         return (
             <div className="Students">
@@ -95,16 +74,13 @@ class Students extends Component {
                         }
                     </ul>
                 </form>
-                <form>
-                    <input type="text"
-                           onChange={this.handleChangeUpdate('firstNameInput')}/>
-                    <input type="text"
-                           onChange={this.handleChangeUpdate('lastNameInput')}/>
-                    <input type="text"
-                           onChange={this.handleChangeUpdate('gitHubInput')}/>
-
-                    <button onClick={this.handleUpdate}>Modifier</button>
-                </form>
+                {/*<SelectedStudent
+                    firstNameInput={this.state.modifData.firstNameInput}
+                    lastNameInput={this.state.modifData.lastNameInput}
+                    gitHubInput={this.state.modifData.gitHubInput}
+                    onChange={this.handleChangeUpdate}
+                    onUpdate={this.handleUpdate}
+                />*/}
             </div>
         );
     }
