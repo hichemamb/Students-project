@@ -41,17 +41,19 @@ class SelectedStudent extends Component {
             <div className="Students">
                 <form>
                     <Input
-                        value={ firstNameInput }
-                        change={this.handleChangeUpdate('firstNameInput')}/>
+                        value={firstNameInput}
+                        change={this.handleChangeUpdate('firstNameInput')}
+                        placeholder={'Firstname'}/>
                     <Input
-                        value={ lastNameInput }
-                        change={this.handleChangeUpdate('lastNameInput')}/>
+                        value={lastNameInput}
+                        change={this.handleChangeUpdate('lastNameInput')}
+                        placeholder={'Lastname'}/>
                     <Input
-                        value={ gitHubInput }
-                        change={this.handleChangeUpdate('gitHubInput')}/>
+                        value={gitHubInput}
+                        change={this.handleChangeUpdate('gitHubInput')}
+                        placeholder={'Github'}/>
 
                     <button onClick={this.handleUpdate}>Modifier</button>
-
                 </form>
             </div>
         );
