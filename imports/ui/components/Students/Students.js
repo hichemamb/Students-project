@@ -3,7 +3,7 @@ import {listStudents} from '../../../api/list-students';
 import {withTracker} from 'meteor/react-meteor-data';
 import Input from '../Input/Input';
 import './Students.css';
-import '../Input/Input
+
 
 class Students extends Component {
 
@@ -34,6 +34,14 @@ class Students extends Component {
             lastName: lastNameInput,
             gitHub: gitHubInput
         });
+
+        this.setState({
+            data: {
+                firstNameInput: '',
+                lastNameInput: '',
+                gitHubInput: ''
+            }
+        });
     };
 
     updateItem = (event) => {
@@ -47,7 +55,6 @@ class Students extends Component {
         event.preventDefault();
         listStudents.remove(id);
     };
-
 
 
     render() {
@@ -64,19 +71,20 @@ class Students extends Component {
                 </div>
                 <form className="Form">
                     <Input
-                     value={ firstNameInput }
-                     change={this.handleChange('firstNameInput')}
-                    />
+                        value={firstNameInput}
+                        change={this.handleChange('firstNameInput')}
+                        placeholder={'Firstname'}/>
                     <Input
-                        value={ lastNameInput }
-                        change={this.handleChange('lastNameInput')}/>
+                        value={lastNameInput}
+                        change={this.handleChange('lastNameInput')}
+                        placeholder={'Lastname'}/>
                     <Input
-                        value={ gitHubInput }
-                        change={this.handleChange('gitHubInput')}/>
+                        value={gitHubInput}
+                        change={this.handleChange('gitHubInput')}
+                        placeholder={'Github'}/>
                     <div>
-                    <button onClick={this.handleSubmit} className="Button-submit">Valider</button>
+                      <button onClick={this.handleSubmit} className="Button-submit">Valider</button>
                     </div>
-
                     <div className="Container-list">
                         <ul className="Content-list">
                             {
