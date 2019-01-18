@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {listStudents} from '../../../../api/list-students';
-import {withTracker} from 'meteor/react-meteor-data';
-
 
 class SelectedStudent extends Component {
 
@@ -60,9 +58,7 @@ class SelectedStudent extends Component {
     }
 }
 
-export default withTracker(() => {
-    return {
-        list: listStudents.find({}).fetch(),
-    };
-})(SelectedStudent);
+export default SelectedStudent;
+
+
 

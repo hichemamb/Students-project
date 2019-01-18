@@ -74,13 +74,6 @@ class Students extends Component {
                         }
                     </ul>
                 </form>
-                {/*<SelectedStudent
-                    firstNameInput={this.state.modifData.firstNameInput}
-                    lastNameInput={this.state.modifData.lastNameInput}
-                    gitHubInput={this.state.modifData.gitHubInput}
-                    onChange={this.handleChangeUpdate}
-                    onUpdate={this.handleUpdate}
-                />*/}
             </div>
         );
     }
