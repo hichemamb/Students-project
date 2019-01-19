@@ -48,6 +48,9 @@ class Students extends Component {
         event.preventDefault();
         const list = this.props.list;
         localStorage.setItem('id', list[event.target.value]._id);
+        localStorage.setItem('firstName', list[event.target.value].firstName);
+        localStorage.setItem('lastName', list[event.target.value].lastName);
+        localStorage.setItem('gitHub', list[event.target.value].gitHub);
         this.props.history.push('/student');
     };
 

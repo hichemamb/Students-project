@@ -8,9 +8,9 @@ class SelectedStudent extends Component {
 
     state = {
         modifData: {
-            firstNameInput: '',
-            lastNameInput: '',
-            gitHubInput: '',
+            firstNameInput: localStorage.getItem('firstName'),
+            lastNameInput: localStorage.getItem('lastName'),
+            gitHubInput: localStorage.getItem('gitHub'),
         },
     };
 
